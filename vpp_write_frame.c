@@ -26,7 +26,7 @@ void mexFunction(int nlhs, mxArray *plhs[],
     FILE* file = (FILE*) dat[3];
 
     int ndim = mxGetNumberOfDimensions(prhs[1]);
-    const long* dims = mxGetDimensions(prhs[1]);
+    const int* dims = mxGetDimensions(prhs[1]);
     if (ndim >= 1 && dims[0] != h) {
         mexErrMsgTxt("invalid h");
     }
