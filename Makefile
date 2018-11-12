@@ -1,3 +1,5 @@
+# MEX     = mex                # for matlab
+MEX     = mkoctfile --mex    # for octave
 
 BINS=vpp_init_input.mex\
 	  vpp_init_output.mex\
@@ -8,7 +10,7 @@ BINS=vpp_init_input.mex\
 default: $(BINS)
 
 %.mex: %.c
-	mkoctfile --mex $^ vpp/vpp.c -Ivpp
+	$(MEX) $^ vpp/vpp.c -Ivpp
 
 clean:
 	-rm $(BINS)
